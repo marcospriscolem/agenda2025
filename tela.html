@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      min-height: 100vh;
+      /* Gradiente claro: azul-claro, branco e lilás */
+      background: linear-gradient(120deg, #e4ecfa 0%, #ffffff 50%, #e6e9fa 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .login-container {
+      background: rgba(255,255,255, 0.95);
+      padding: 30px;
+      box-shadow: 0 0 15px rgba(170,200,240,0.23);
+      border-radius: 12px;
+      width: 320px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 22px;
+      color: #233869;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+    label {
+      color: #4b5f91;
+      font-weight: bold;
+    }
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0 15px 0;
+      border: 1px solid #b2c6e2;
+      border-radius: 5px;
+      background: #f7fafd;
+      color: #293e63;
+      font-size: 15px;
+    }
+    input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      background: linear-gradient(90deg,#b8d3fa 60%, #95bbe7 100%);
+      border: none;
+      color: #233869;
+      font-size: 16px;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    input[type="submit"]:hover {
+      background: linear-gradient(90deg, #9ac0f3 25%, #bfd2fb 75%);
+      color: #223257;
+    }
+    .error {
+      color: #d34646;
+      text-align: center;
+      margin-top: 12px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <form id="loginForm">
+      <h2>Login</h2>
+      <label for="username">Usuário:</label>
+      <input type="text" id="username" name="username" required autofocus>
+
+      <label for="password">Senha (somente números):</label>
+      <input type="password" id="password" name="password" required pattern="\d+" title="Apenas números">
+
+      <input type="submit" value="Entrar">
+      <div id="errorMsg" class="error"></div>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      const errorMsg = document.getElementById('errorMsg');
+
+      if (username === 'Marcos' && password === '769117') {
+        window.location.href = 'CAPA.HTML';
+      } else {
+        errorMsg.textContent = 'Usuário ou senha inválidos.';
+      }
+    });
+  </script>
+</body>
+</html>

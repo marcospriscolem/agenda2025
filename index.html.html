@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>
+    PLANOS DE AULA | ANO LETIVO 2025 | COLÉGIO ESTADUAL PRISCO VIANA | ESCOLA MUNICIPAL JOSÉ CARDOSO DE LIMA | PROFº MARCOS ANTONIO DE JESUS | DISCIPLINA: MATEMÁTICA
+  </title>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+      font-family: 'Segoe UI', Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .layout-flex {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      max-width: 1300px;
+      gap: 44px;
+    }
+    .caixa-imagem {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 4px 18px #185a9d40;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 200px;
+      height: 200px;
+      padding: 0;
+      animation: flutuar 3s ease-in-out infinite alternate;
+    }
+    .logo-curso {
+      width: 180px;
+      height: 180px;
+      object-fit: contain;
+      border-radius: 16px;
+      background: none;
+      box-shadow: none;
+      margin: 0;
+      display: block;
+      animation: zoomInOut 2.7s ease-in-out infinite alternate;
+    }
+    .layout-flex .caixa-imagem:first-child {
+      animation-delay: 0s;
+    }
+    .layout-flex .caixa-imagem:last-child {
+      animation-delay: 1.5s;
+    }
+    .layout-flex .caixa-imagem:last-child .logo-curso {
+      animation-delay: 1.1s;
+    }
+    @keyframes flutuar {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-20px); box-shadow: 0 16px 32px #185a9d30; }
+    }
+    @keyframes zoomInOut {
+      0%   { transform: scale(1); }
+      100% { transform: scale(1.08); }
+    }
+    .capa-titulo {
+      background: #fff;
+      border-radius: 22px 36px 22px 36px;
+      box-shadow: 0 6px 32px #20a1c9a5, 0 1.5px 4px #17344d28;
+      padding: 38px 26px 30px 26px;
+      max-width: 720px;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 36px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .linha-titulo {
+      font-size: 2.25em;
+      font-weight: 700;
+      color: #126687;
+      text-shadow: 1px 2px 8px #1976c033;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+    .ano-letivo {
+      font-size: 1.3em;
+      color: #186fa3;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+    .escola-nome, .municipal-nome {
+      font-size: 1.12em;
+      color: #000;
+      font-weight: 700;
+      margin-bottom: 0;
+      margin-top: 2px;
+      letter-spacing: 0.4px;
+    }
+    .prof-disc {
+      font-size: 1em;
+      color: #22638a;
+      margin-bottom: 24px;
+      font-weight: 500;
+    }
+    .container-botoes {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      max-width: 720px;
+      margin-top: 22px;
+    }
+    .botoes-principais {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 22px;
+      width: 100%;
+      margin-bottom: 0;
+    }
+    .btn-turma {
+      background: linear-gradient(90deg, #43cea2 0%, #185a9d 100%);
+      color: white;
+      border: none;
+      border-radius: 20px;
+      padding: 18px 0;
+      font-size: 1.22em;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(24, 90, 157, 0.54);
+      transition: background 0.26s, transform 0.2s;
+      user-select: none;
+      letter-spacing: 1px;
+      text-align: center;
+      width: 100%;
+      min-width: 160px;
+      max-width: 250px;
+      margin-bottom: 0;
+      flex: 1 1 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .btn-turma:not(:last-child) {
+      margin-right: 0;
+    }
+    .btn-turma:hover {
+      background: linear-gradient(90deg, #185a9d 0%, #43cea2 100%);
+      color: #80def1;
+      transform: scale(1.06);
+      box-shadow: 0 8px 24px rgba(24, 90, 157, 0.7);
+    }
+    .botoes-juvenil-formativo, .botoes-row {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 22px;
+      width: 100%;
+      margin-top: 6px;
+      margin-bottom: 0;
+    }
+    .linha-suave {
+      width: 80%;
+      height: 2.5px;
+      margin: 32px auto 15px auto;
+      background: linear-gradient(90deg, #43cea297 0%, #185a9d80 100%);
+      border: none;
+      border-radius: 6px;
+      opacity: 0.7;
+      box-shadow: 0 1.4px 6px #16518722;
+    }
+    .botoes-inferiores {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      width: 100%;
+      max-width: 480px;
+      margin-top: 8px;
+      justify-content: center;
+    }
+    .btn-turma.cronograma-prisco {
+      background: linear-gradient(90deg, #1e3c72 0%, #2a5298 100%);
+      color: #fff;
+    }
+    .btn-turma.cronograma-prisco:hover {
+      background: linear-gradient(90deg, #2a5298 0%, #1e3c72 100%);
+      color: #e3f1fa;
+      transform: scale(1.05);
+    }
+    @media (max-width: 900px) {
+      .layout-flex { gap: 18px; }
+      .caixa-imagem { width: 120px; height: 120px;}
+      .logo-curso { width: 100px; height: 100px;}
+      .capa-titulo { padding: 26px 8px 22px 8px; }
+      .botoes-principais, .botoes-juvenil-formativo, .botoes-row { gap: 10px; }
+      .btn-turma { font-size: 1em; padding: 13px 0; }
+    }
+    @media (max-width: 600px) {
+      .botoes-principais, .botoes-juvenil-formativo, .botoes-row {
+        flex-direction: column;
+        gap: 14px;
+      }
+      .btn-turma, .btn-turma.cronograma-prisco {
+        min-width: auto;
+        width: 100%;
+        font-size: 1em;
+        padding: 14px 0;
+      }
+      .caixa-imagem { width: 80px; height: 80px;}
+      .logo-curso { width: 60px; height: 60px;}
+      .container-botoes { gap: 14px;}
+      .linha-suave { margin: 16px auto 10px auto;}
+    }
+    @media (max-width: 1050px) {
+      .layout-flex { flex-direction: column; gap: 18px; }
+      .caixa-imagem { margin: 0 0 18px 0; }
+    }
+    @media (max-width: 700px) {
+      .container-botoes { gap: 18px;}
+      .linha-suave { width: 96%; }
+    }
+  </style>
+</head>
+<body>
+  <!-- CAPA INÍCIO -->
+  <div class="layout-flex">
+    <div class="caixa-imagem">
+      <img src="03.png" alt="Logo do curso à esquerda" class="logo-curso">
+    </div>
+    <div class="capa-titulo">
+      <div class="linha-titulo">PLANOS DE AULA</div>
+      <div class="ano-letivo">ANO LETIVO 2025</div>
+      <div class="escola-nome">COLÉGIO ESTADUAL PRISCO VIANA</div>
+      <div class="municipal-nome">ESCOLA MUNICIPAL JOSÉ CARDOSO DE LIMA</div>
+      <div class="prof-disc">
+        PROFº MARCOS ANTONIO DE JESUS<br>
+        DISCIPLINA: MATEMÁTICA
+      </div>
+      <div class="container-botoes">
+        <div class="botoes-principais">
+          <button class="btn-turma" onclick="window.location.href='plano1ano.html'">1º Ano</button>
+          <button class="btn-turma" onclick="window.location.href='plano2ano.html'">2º Ano</button>
+          <button class="btn-turma" onclick="window.location.href='plano3ano.html'">3º Ano</button>
+        </div>
+        <div class="botoes-juvenil-formativo">
+          <button class="btn-turma" onclick="window.location.href='TFVIeTJVI.html'">TJ VI e TF VI</button>
+          <button class="btn-turma" onclick="window.location.href='TFVIIeTJVII.html'">TJ VII e TF VII</button>
+        </div>
+        <hr class="linha-suave">
+        <div class="botoes-inferiores">
+          <div class="botoes-principais">
+            <button class="btn-turma" onclick="window.location.href='plano9.html'">9º Ano</button>
+            <button class="btn-turma" onclick="window.location.href='obmep.html'">OBMEP 2025</button>
+            <button class="btn-turma" onclick="window.location.href='dados.html'">Criar Plano de Aula</button>
+          </div>
+          <div class="botoes-row">
+            <button class="btn-turma cronograma-prisco" onclick="window.location.href='cronograma.html'">Cronograma Prisco</button>
+            <button class="btn-turma" style="background: linear-gradient(90deg,#f7971e 0%, #ffd200 100%);color:#222;"
+              onclick="window.location.href='cronogramacardoso.html'">Cronograma Cardoso</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="caixa-imagem">
+      <img src="04.png" alt="Logo do curso à direita" class="logo-curso">
+    </div>
+  </div>
+  <!-- CAPA FIM -->
+</body>
+</html>

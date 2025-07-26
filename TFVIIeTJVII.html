@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Planos de Aula | TJ VII & TF VII | Profº Marcos Antonio de Jesus</title>
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(117deg, #dbeafe 0%, #8ecae6 37%, #219ebc 100%);
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: #1b263b;
+      min-height: 100vh;
+      padding: 32px 0;
+    }
+    .pagina-plano {
+      max-width: 700px;
+      margin: 32px auto 46px auto;
+      border-radius: 18px;
+      box-shadow: 0 3px 18px #219ebc18;
+      display: flex;
+      flex-direction: column;
+      gap: 26px;
+      padding: 0;
+    }
+    .plano-b {
+      background: rgba(255,255,255,0.97);
+      padding: 30px 24px 20px 24px;
+      border: 2.8px solid #43cea2;
+    }
+    .plano-c {
+      background: linear-gradient(92deg,#fff7fb 80%,#e2e9fc 100%);
+      padding: 30px 24px 20px 24px;
+      border: 2.5px solid #a7bedc;
+    }
+    .informacoes-gerais {
+      padding: 9px 13px;
+      color: #19446a;
+      font-size: 1.12em;
+      font-weight: 600;
+      background: #e6f4fa;
+      border-radius: 14px;
+      box-shadow: 0 2px 10px #229abc19;
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      margin-bottom: 14px;
+    }
+    h1, h2 {
+      color: #185a9d;
+      text-align: center;
+      margin: 6px 0 10px 0;
+      font-weight: bold;
+    }
+    h1 {font-size: 1.14em;}
+    h2 {font-size: 1.08em;}
+    .label-destaque {
+      color: #125581;
+      font-weight: 600;
+    }
+    ul, ol {
+      margin-left: 1em;
+      margin-bottom: 9px;
+      line-height: 1.47;
+      font-size: 1.06em;
+      padding-left: 10px;
+    }
+    .botao-voltar {
+      position: fixed;
+      top: 20px;
+      left: 30px;
+      background: linear-gradient(90deg, #43cea2 0%, #185a9d 100%);
+      color: #fff;
+      font-size: 1.13em;
+      font-weight: 600;
+      border: none;
+      border-radius: 20px;
+      padding: 10px 28px 10px 20px;
+      box-shadow: 0 4px 18px #20a1c969;
+      cursor: pointer;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      transition: background 0.22s, color 0.16s, box-shadow 0.20s, transform 0.14s;
+      letter-spacing: 0.5px;
+      z-index: 1200;
+    }
+    .botao-voltar:hover {
+      background: linear-gradient(90deg, #185a9d 0%, #43cea2 100%);
+      color: #00f6ff;
+      box-shadow: 0 8px 25px #219ebca8;
+      transform: scale(1.04);
+    }
+    .logo-fixa {
+      position: fixed;
+      top: 22px;
+      right: 34px;
+      width: 88px;
+      height: 88px;
+      z-index: 1100;
+      object-fit: contain;
+      border-radius: 16px;
+      background: none;
+      box-shadow: 0 2px 18px #20c9a18a;
+      transition: transform 0.14s;
+      animation: logofade 1.7s cubic-bezier(0.29,0.6,0.47,0.91);
+    }
+    @keyframes logofade {
+      0% { filter: opacity(0) blur(5px);}
+      100% {filter: opacity(1) blur(0);}
+    }
+    @media (max-width: 700px) {
+      .logo-fixa { width: 52px; height: 52px; top: 13px; right: 7px;}
+      .botao-voltar { top: 15px; left: 10px; padding:8px 13px 8px 11px; font-size:0.96em;}
+      .pagina-plano {padding:0;}
+    }
+  </style>
+</head>
+<body>
+  <!-- Botão voltar e a imagem ficam FIXOS na tela -->
+  <a href="capa.html" class="botao-voltar">&#8592; Voltar</a>
+  <img src="03.png" alt="Logo do curso à direita" class="logo-fixa">
+
+  <!-- INÍCIO PLANO SEMANA ANTERIOR -->
+  <div class="pagina-plano plano-b">
+    <div class="informacoes-gerais">
+      Professor: Marcos Antonio de Jesus<br>
+      Turmas: Tempo Juvenil VII (TJ VII) e Tempo Formativo VII (TF VII)
+    </div>
+    <h1>ESCOLA MUNICIPAL JOSÉ CARDOSO DE LIMA</h1>
+    <h2>Plano de Aula Resumido – TJ VII &amp; TF VII</h2>
+    <ul>
+      <li><span class="label-destaque">Data:</span> Semana de 7 a 11 de julho de 2025</li>
+      <li><span class="label-destaque">Duração:</span> 2 aulas</li>
+      <li><span class="label-destaque">Tema:</span> Média, Moda e Mediana</li>
+    </ul>
+    <h2>Objetivos</h2>
+    <ul>
+      <li>Compreender os conceitos de média aritmética, moda e mediana em conjuntos de dados.</li>
+      <li>Calcular a média, moda e mediana de conjuntos simples e aplicados a situações do cotidiano.</li>
+      <li>Desenvolver a capacidade de interpretar e comparar informações a partir dessas medidas de tendência central.</li>
+      <li>Reconhecer a importância dessas medidas na análise de dados em diferentes contextos.</li>
+    </ul>
+    <h2>Conteúdo</h2>
+    <ul>
+      <li>Média aritmética simples e ponderada.</li>
+      <li>Moda: identificação do valor mais frequente de um conjunto.</li>
+      <li>Mediana: definição e cálculo em séries com números pares e ímpares de elementos.</li>
+      <li>Situações-problema envolvendo medidas de tendência central.</li>
+      <li>Aplicações práticas em contextos escolares e do cotidiano.</li>
+    </ul>
+    <h2>Atividades</h2>
+    <ul>
+      <li>Resolução de exemplos práticos: cálculo de média, moda e mediana com listas de números.</li>
+      <li>Atividades colaborativas com coleta e análise de dados da turma (idade, número de irmãos, notas, etc.).</li>
+      <li>Discussão de situações reais onde as medidas centrais podem ser utilizadas para tomada de decisão.</li>
+      <li>Questões de múltipla escolha e discursivas para fixação dos conceitos.</li>
+    </ul>
+    <h2>Avaliação</h2>
+    <ul>
+      <li>Participação nas discussões e nas atividades práticas em grupo.</li>
+      <li>Resolução correta das atividades propostas em sala.</li>
+      <li>Aplicação dos conceitos em situações-problema contextualizadas.</li>
+      <li>Capacidade de explicar, oralmente ou por escrito, o significado de média, moda e mediana.</li>
+    </ul>
+  </div>
+  <!-- FIM PLANO SEMANA ANTERIOR -->
+
+  <!-- INÍCIO PLANO SEMANA 14-18 JULHO -->
+  <div class="pagina-plano plano-c">
+    <div class="informacoes-gerais">
+      Professor: Marcos Antonio de Jesus<br>
+      Turmas: Tempo Juvenil VII (TJ VII) e Tempo Formativo VII (TF VII)
+    </div>
+    <h1>ESCOLA MUNICIPAL JOSÉ CARDOSO DE LIMA</h1>
+    <h2>Plano de Aula Resumido – TJ VII &amp; TF VII</h2>
+    <ul>
+      <li><span class="label-destaque">Data:</span> Semana de 14 a 18 de julho de 2025</li>
+      <li><span class="label-destaque">Duração:</span> 2 aulas</li>
+      <li><span class="label-destaque">Tema:</span> Média, Moda e Mediana - Exercícios Práticos</li>
+    </ul>
+    <h2>Objetivos</h2>
+    <ul>
+      <li>Compreender e aplicar os conceitos de média aritmética, moda e mediana.</li>
+      <li>Praticar cálculos dessas medidas em diferentes contextos, utilizando dados reais e simulados.</li>
+      <li>Interpretar resultados e analisar o comportamento de diferentes conjuntos numéricos.</li>
+      <li>Desenvolver a leitura crítica e matemática sobre dados em situações do cotidiano escolar.</li>
+    </ul>
+    <h2>Conteúdo</h2>
+    <ul>
+      <li>Cálculo da média aritmética de conjuntos numéricos, incluindo médias simples aplicadas a situações reais.</li>
+      <li>Identificação e cálculo da moda em diferentes conjuntos.</li>
+      <li>Identificação e cálculo da mediana em conjuntos com números pares e ímpares de elementos.</li>
+      <li>Análise e interpretação dos conceitos em problemas contextualizados.</li>
+    </ul>
+    <h2>Atividades/Exercícios Propostos</h2>
+    <ol>
+      <li>
+        <b>Média Aritmética</b><br>
+        Um estudante obteve as seguintes notas em cinco provas: 6, 7, 8, 9 e 10.<br>
+        <i>Qual é a média aritmética dessas notas?</i>
+      </li>
+      <li>
+        <b>Moda</b><br>
+        Considere o conjunto de dados: 3, 7, 7, 2, 5, 7, 4, 2.<br>
+        <i>Qual é a moda desse conjunto?</i>
+      </li>
+      <li>
+        <b>Mediana</b><br>
+        Dado o conjunto de números: 12, 15, 14, 10, 18, 20, 16.<br>
+        <i>Qual é a mediana desses valores?</i>
+      </li>
+      <li>
+        <b>Média, Moda e Mediana em um Conjunto</b><br>
+        Em uma pesquisa, as idades dos participantes foram: 21, 23, 23, 24, 25, 25, 25, 26, 28.<br>
+        <i>Calcule a média, a moda e a mediana dessas idades.</i>
+      </li>
+      <li>
+        <b>Interpretação de Resultados</b><br>
+        Em uma sala de aula, as notas finais dos alunos foram: 5, 6, 6, 7, 8, 8, 8, 9.<br>
+        <i>Explique qual é a média, a moda e a mediana dessas notas e o que cada uma representa nesse contexto.</i>
+      </li>
+    </ol>
+    <h2>Avaliação</h2>
+    <ul>
+      <li>Participação no desenvolvimento das atividades e resolução dos exercícios em grupo ou individualmente.</li>
+      <li>Capacidade de calcular e interpretar as medidas de tendência central apresentadas.</li>
+      <li>Justificativa das respostas e argumentação matemática ao explicar os resultados.</li>
+      <li>Aplicação dos conceitos em situações novas e contextualizadas.</li>
+    </ul>
+  </div>
+  <!-- FIM PLANO SEMANA 14-18 JULHO -->
+
+<div class="pagina-plano plano-b">
+  <div class="informacoes-gerais">
+    Professor: Marcos Antonio de Jesus<br>
+    Turmas: Tempo Juvenil VII (TJ VII) e Tempo Formativo VII (TF VII)
+  </div>
+  <h1>ESCOLA MUNICIPAL JOSÉ CARDOSO DE LIMA</h1>
+  <h2>Plano de Aula Resumido – TJ VII &amp; TF VII</h2>
+  <ul>
+    <li><span class="label-destaque">Data:</span> Semana de 21 a 25 de julho de 2025</li>
+    <li><span class="label-destaque">Duração:</span> 2 aulas</li>
+    <li><span class="label-destaque">Tema:</span> Média Aritmética em Contexto do Cotidiano</li>
+  </ul>
+  <h2>Objetivos</h2>
+  <ul>
+    <li>Compreender o conceito de média aritmética simples, aplicando-o em situações reais do dia a dia.</li>
+    <li>Calcular médias a partir de dados reais apresentados em tabelas.</li>
+    <li>Interpretar e comparar resultados utilizando medidas de tendência central.</li>
+    <li>Desenvolver habilidades de leitura crítica e resolução de problemas com dados numéricos.</li>
+  </ul>
+  <h2>Conteúdo</h2>
+  <ul>
+    <li>Média aritmética simples aplicada a situações do cotidiano.</li>
+    <li>Análise de tabelas de preços e interpretação dos resultados.</li>
+    <li>Comparação de médias para tomada de decisões informadas.</li>
+  </ul>
+  <h2>Tabela de Preços Pesquisados</h2>
+  <table style="border-collapse: collapse; width: 100%;">
+    <thead>
+      <tr>
+        <th style="border: 1px solid #ccc; padding: 5px;">Estabelecimento</th>
+        <th style="border: 1px solid #ccc; padding: 5px;">Soya</th>
+        <th style="border: 1px solid #ccc; padding: 5px;">Sinhá</th>
+        <th style="border: 1px solid #ccc; padding: 5px;">Leve</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border: 1px solid #ccc; padding: 5px;">Mercadinho do Seu Cristóvão</td>
+        <td style="border: 1px solid #ccc; padding: 5px;">R$ 8,50</td>
+        <td style="border: 1px solid #ccc; padding: 5px;">R$ 8,80</td>
+        <td style="border: 1px solid #ccc; padding: 5px;">R$ 8,30</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #ccc; padding: 5px;">Supermercado Demais</td>
+        <td style="border: 1px solid #ccc; padding: 5px;">R$ 9,00</td>
+        <td style="border: 1px solid #ccc; padding: 5px;">R$ 8,50</td>
+        <td style="border: 1px solid #ccc; padding: 5px;">R$ 8,20</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #ccc; padding: 5px;">Hipermercado Bem Barato</td>
+        <td style="border: 1px solid #ccc; padding: 5px;">R$ 8,30</td>
+        <td style="border: 1px solid #ccc; padding: 5px;">R$ 7,90</td>
+        <td style="border: 1px solid #ccc; padding: 5px;">R$ 8,50</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #ccc; padding: 5px;">Venda da Glória</td>
+        <td style="border: 1px solid #ccc; padding: 5px;">R$ 8,70</td>
+        <td style="border: 1px solid #ccc; padding: 5px;">R$ 8,50</td>
+        <td style="border: 1px solid #ccc; padding: 5px;">R$ 7,90</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #ccc; padding: 5px;">Supermercado Bom</td>
+        <td style="border: 1px solid #ccc; padding: 5px;">R$ 8,40</td>
+        <td style="border: 1px solid #ccc; padding: 5px;">R$ 8,30</td>
+        <td style="border: 1px solid #ccc; padding: 5px;">R$ 8,20</td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>Atividades/Exercício Proposto</h2>
+  <ol>
+    <li>
+      <strong>Média de Preços de Óleo de Soja</strong><br>
+      Teobaldo pesquisou os preços do óleo de soja (embalagem de 900 mL) das marcas Soya, Sinhá e Leve em cinco estabelecimentos do bairro, conforme a tabela acima.
+      <ul>
+        <li>Calcule, utilizando uma calculadora:
+          <ul>
+            <li>a) O preço médio do óleo de soja da marca Sinhá nesses cinco estabelecimentos.</li>
+            <li>b) O preço médio da marca Leve.</li>
+            <li>c) Com base nos resultados, indique qual das três marcas tem o menor preço médio.</li>
+          </ul>
+        </li>
+        <li>A atividade estimula a leitura da tabela, a realização de operações matemáticas básicas e a comparação entre marcas para tomada de decisão de compra.</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Discussão em Grupo</strong><br>
+      Os alunos discutirão como o conceito de média aritmética pode ajudar famílias a economizar nas compras e em outras situações cotidianas.
+    </li>
+    <li>
+      <strong>Apresentação das Soluções</strong><br>
+      Voluntários apresentarão seus cálculos e explicarão o raciocínio utilizado para o restante da turma.
+    </li>
+  </ol>
+  <h2>Avaliação</h2>
+  <ul>
+    <li>Participação nas discussões e nas atividades práticas, individuais ou em grupo.</li>
+    <li>Precisão nos cálculos e interpretação correta dos resultados apresentados.</li>
+    <li>Capacidade de explicar os procedimentos e justificar a escolha da marca com menor preço médio.</li>
+    <li>Aplicação do conceito de média em situações contextualizadas e pertinentes ao cotidiano dos alunos.</li>
+  </ul>
+</div>
+
+
+</body>
+</html>

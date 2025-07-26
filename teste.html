@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz de Porcentagem com Correção</title>
+  <style>
+    body {
+      background: linear-gradient(130deg,#e3f6fc 0%,#e4f3ed 100%);
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: #18345a;
+      margin: 0;
+      min-height: 100vh;
+      padding: 0 2vw;
+    }
+    .quiz-container {
+      max-width: 700px;
+      margin: 32px auto 32px auto;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 22px #00a9c233;
+      padding: 25px 30px;
+    }
+    h1 {
+      text-align:center;
+      color: #137573;
+      margin-bottom: 15px;
+    }
+    fieldset {
+      border: 2px solid #93e8d0;
+      border-radius: 8px;
+      margin-bottom: 19px;
+      background: linear-gradient(90deg,#f6fafc 70%,#e6ffe7 100%);
+    }
+    legend {
+      font-weight:bold;
+      color: #125483;
+      font-size: 1.04em;
+      padding: 0 2px;
+    }
+    label {
+      font-size: 1.04em;
+      line-height:1.9;
+      cursor: pointer;
+    }
+    button {
+      display: inline-block;
+      margin: 18px 8px 0 0;
+      background: linear-gradient(90deg,#45c8ae 0%,#1997bc 100%);
+      color: #fff;
+      border: none;
+      font-size: 1.08em;
+      font-weight: 600;
+      border-radius: 20px;
+      padding: 10px 35px;
+      box-shadow: 0 2px 12px #18888933;
+      cursor: pointer;
+      transition: background 0.18s,box-shadow 0.18s;
+      letter-spacing: .5px;
+      min-width: 160px;
+    }
+    button:hover {
+      background: linear-gradient(90deg,#1997bc 0%,#45c8ae 100%);
+      box-shadow: 0 2px 19px #59dad599;
+    }
+    .msg {
+      text-align: center;
+      margin-top: 24px;
+      margin-bottom: 7px;
+      font-weight: bold;
+      color: #197569;
+      font-size: 1.13em;
+      display: none;
+    }
+    #resultado {
+      text-align: left;
+      margin-top: 24px;
+      font-size: 1.08em;
+      color: #195a3d;
+      background: #eaffe9;
+      border-radius: 8px;
+      padding: 14px 18px 9px 18px;
+      min-height: 20px;
+    }
+  </style>
+</head>
+<body>
+<div class="quiz-container">
+  <h1>Quiz de Porcentagem</h1>
+  <form id="quizForm">
+    <fieldset>
+      <legend>1. Qual é 20% de 150?</legend>
+      <label><input type="radio" name="q1" value="20"> 20</label><br>
+      <label><input type="radio" name="q1" value="25"> 25</label><br>
+      <label><input type="radio" name="q1" value="30"> 30</label><br>
+      <label><input type="radio" name="q1" value="35"> 35</label><br>
+      <label><input type="radio" name="q1" value="40"> 40</label>
+    </fieldset>
+    <fieldset>
+      <legend>2. Se um produto custa R$ 200 e está com 15% de desconto, qual é o valor do desconto?</legend>
+      <label><input type="radio" name="q2" value="R$ 20"> R$ 20</label><br>
+      <label><input type="radio" name="q2" value="R$ 25"> R$ 25</label><br>
+      <label><input type="radio" name="q2" value="R$ 30"> R$ 30</label><br>
+      <label><input type="radio" name="q2" value="R$ 35"> R$ 35</label><br>
+      <label><input type="radio" name="q2" value="R$ 40"> R$ 40</label>
+    </fieldset>
+    <fieldset>
+      <legend>3. Um vendedor ganha 10% de comissão sobre as vendas. Se ele vende R$ 5000, quanto ele ganha de comissão?</legend>
+      <label><input type="radio" name="q3" value="R$ 400"> R$ 400</label><br>
+      <label><input type="radio" name="q3" value="R$ 450"> R$ 450</label><br>
+      <label><input type="radio" name="q3" value="R$ 500"> R$ 500</label><br>
+      <label><input type="radio" name="q3" value="R$ 550"> R$ 550</label><br>
+      <label><input type="radio" name="q3" value="R$ 600"> R$ 600</label>
+    </fieldset>
+    <fieldset>
+      <legend>4. Se 30% dos alunos de uma escola são meninas e a escola tem 600 alunos, quantas meninas há na escola?</legend>
+      <label><input type="radio" name="q4" value="100"> 100</label><br>
+      <label><input type="radio" name="q4" value="150"> 150</label><br>
+      <label><input type="radio" name="q4" value="180"> 180</label><br>
+      <label><input type="radio" name="q4" value="200"> 200</label><br>
+      <label><input type="radio" name="q4" value="250"> 250</label>
+    </fieldset>
+    <fieldset>
+      <legend>5. Um número aumentou 25% e agora é 150. Qual era o número inicial?</legend>
+      <label><input type="radio" name="q5" value="100"> 100</label><br>
+      <label><input type="radio" name="q5" value="110"> 110</label><br>
+      <label><input type="radio" name="q5" value="115"> 115</label><br>
+      <label><input type="radio" name="q5" value="120"> 120</label><br>
+      <label><input type="radio" name="q5" value="125"> 125</label>
+    </fieldset>
+    <fieldset>
+      <legend>6. Qual é a porcentagem equivalente a 0,75?</legend>
+      <label><input type="radio" name="q6" value="25%"> 25%</label><br>
+      <label><input type="radio" name="q6" value="50%"> 50%</label><br>
+      <label><input type="radio" name="q6" value="60%"> 60%</label><br>
+      <label><input type="radio" name="q6" value="75%"> 75%</label><br>
+      <label><input type="radio" name="q6" value="80%"> 80%</label>
+    </fieldset>
+    <fieldset>
+      <legend>7. Um desconto de 10% foi aplicado a um produto que custava R$ 800. Qual o preço final?</legend>
+      <label><input type="radio" name="q7" value="R$ 700"> R$ 700</label><br>
+      <label><input type="radio" name="q7" value="R$ 720"> R$ 720</label><br>
+      <label><input type="radio" name="q7" value="R$ 740"> R$ 740</label><br>
+      <label><input type="radio" name="q7" value="R$ 750"> R$ 750</label><br>
+      <label><input type="radio" name="q7" value="R$ 760"> R$ 760</label>
+    </fieldset>
+    <fieldset>
+      <legend>8. Se um investidor obtém 12% de lucro sobre o capital investido e investiu R$ 2000, qual foi o lucro?</legend>
+      <label><input type="radio" name="q8" value="R$ 200"> R$ 200</label><br>
+      <label><input type="radio" name="q8" value="R$ 220"> R$ 220</label><br>
+      <label><input type="radio" name="q8" value="R$ 240"> R$ 240</label><br>
+      <label><input type="radio" name="q8" value="R$ 260"> R$ 260</label><br>
+      <label><input type="radio" name="q8" value="R$ 280"> R$ 280</label>
+    </fieldset>
+    <fieldset>
+      <legend>9. O preço de um produto aumentou de R$ 50 para R$ 65. Qual é a porcentagem de aumento?</legend>
+      <label><input type="radio" name="q9" value="25%"> 25%</label><br>
+      <label><input type="radio" name="q9" value="30%"> 30%</label><br>
+      <label><input type="radio" name="q9" value="35%"> 35%</label><br>
+      <label><input type="radio" name="q9" value="40%"> 40%</label><br>
+      <label><input type="radio" name="q9" value="45%"> 45%</label>
+    </fieldset>
+    <fieldset>
+      <legend>10. Um funcionário teve um aumento de 8% em seu salário, que passou a ser R$ 2700. Qual era seu salário anterior?</legend>
+      <label><input type="radio" name="q10" value="R$ 2400"> R$ 2400</label><br>
+      <label><input type="radio" name="q10" value="R$ 2450"> R$ 2450</label><br>
+      <label><input type="radio" name="q10" value="R$ 2500"> R$ 2500</label><br>
+      <label><input type="radio" name="q10" value="R$ 2550"> R$ 2550</label><br>
+      <label><input type="radio" name="q10" value="R$ 2600"> R$ 2600</label>
+    </fieldset>
+    <button type="button" onclick="corrigirQuiz()">Corrigir</button>
+    <button type="submit">Salvar Respostas</button>
+  </form>
+  <div id="resultado"></div>
+  <div id="mensagem" class="msg"></div>
+</div>
+<script>
+  // Gabarito das respostas
+  const answerKey = {
+    q1: '30',
+    q2: 'R$ 30',
+    q3: 'R$ 500',
+    q4: '180',
+    q5: '120',
+    q6: '75%',
+    q7: 'R$ 720',
+    q8: 'R$ 240',
+    q9: '30%',
+    q10: 'R$ 2500'
+  };
+
+  function corrigirQuiz() {
+    let total = 10;
+    let correct = 0;
+    let resultados = [];
+    for (let i = 1; i <= total; i++) {
+      const q = 'q' + i;
+      const selected = document.querySelector('input[name="' + q + '"]:checked');
+      if (!selected) {
+        resultados.push(`Questão ${i}: Não respondida`);
+      } else if (selected.value === answerKey[q]) {
+        correct++;
+        resultados.push(`Questão ${i}: Correta`);
+      } else {
+        resultados.push(`Questão ${i}: Incorreta`);
+      }
+    }
+    const percentual = (correct / total * 100).toFixed(1);
+    const resultadoContainer = document.getElementById('resultado');
+    resultadoContainer.innerHTML = `<p>Você acertou ${correct} de ${total} questões (${percentual}%).</p><ul>${resultados.map(r => `<li>${r}</li>`).join('')}</ul>`;
+  }
+
+  // Salva respostas no localStorage
+  document.getElementById('quizForm').onsubmit = function(e){
+    e.preventDefault();
+    var respostas = {};
+    for(let i=1;i<=10;i++){
+      var ques = document.querySelector('input[name="q'+i+'"]:checked');
+      respostas['q'+i] = ques ? ques.value : '';
+    }
+    localStorage.setItem('quiz_porcentagem_respostas', JSON.stringify(respostas));
+    document.getElementById('mensagem').style.display = 'block';
+    document.getElementById('mensagem').innerText = 'Respostas salvas com sucesso! Você pode fechar ou atualizar esta página que suas escolhas permanecerão marcadas.';
+  };
+
+  // Marca alternativas já salvas, se houver
+  window.onload = function(){
+    var salvas = localStorage.getItem('quiz_porcentagem_respostas');
+    if(salvas) {
+      salvas = JSON.parse(salvas);
+      for(let i=1;i<=10;i++){
+        if(salvas['q'+i]){
+          let opt = document.querySelector('input[name="q'+i+'"][value="'+salvas['q'+i]+'"]');
+          if(opt) opt.checked = true;
+        }
+      }
+    }
+  };
+</script>
+</body>
+</html>

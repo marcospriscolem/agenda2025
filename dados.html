@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Planejamento de Aula</title>
+  <style>
+    body {
+      background: #f1f3f7;
+      color: #222;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding-top: 40px;
+    }
+    .container {
+      background: #fff;
+      padding: 2rem 2.5rem;
+      border-radius: 12px;
+      box-shadow: 0 0 16px #ccd3db77;
+      width: 400px;
+      margin-top: 10px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #1e4668;
+      letter-spacing: 1px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+    }
+    .linha-form {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.5em;
+    }
+    label {
+      width: 90px;
+      font-weight: 600;
+      color: #29496e;
+      margin-right: 6px;
+      text-align: right;
+    }
+    label::after {
+      content: ":";
+      margin-left: 2px;
+    }
+    input[type="text"], input[type="date"], textarea {
+      flex: 1;
+      padding: 0.55em;
+      border: 1px solid #b1bee7;
+      border-radius: 6px;
+      background: #f8fafc;
+      color: #212529;
+      font-size: 1em;
+      margin-right: 0;
+    }
+    textarea {
+      min-height: 64px;
+      resize: vertical;
+      font-family: Arial, sans-serif;
+    }
+    button {
+      width: 32%;
+      padding: 1em 0.5em;
+      border: none;
+      border-radius: 6px;
+      background: #4378be;
+      color: #fff;
+      font-weight: bold;
+      font-size: 1.18em;
+      cursor: pointer;
+      transition: 0.2s background, transform 0.1s ease;
+      margin-top: 0.8em;
+    }
+    #limpar { background: #ff6868; }
+    #limpar:hover { background: #e14a4a; }
+    #salvar:hover { background: #3266a8; }
+    #copiar { background: #28a745; }
+    #copiar:hover { background: #218838; }
+    /* Botão pesquisar maior */
+    #pesquisar {
+      background: #6043ce;
+      font-size: 1.22em;
+      font-weight: 700;
+      padding: 1.25em 0.5em;
+      min-width: 220px;
+      width: 100%;
+      margin-top: 18px;
+      margin-bottom: 0.4em;
+      letter-spacing: 1.5px;
+    }
+    #pesquisar:hover {
+      background: #4a32af;
+    }
+    #foto-area {
+      flex: 1;
+      min-height: 60px;
+      background: #f8fafc;
+      border: 1px dashed #b1bee7;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.97em;
+      color: #999;
+      cursor: pointer;
+      overflow: hidden;
+      position: relative;
+    }
+    #foto-area img {
+      max-width: 100%;
+      max-height: 120px;
+      border-radius: 4px;
+      display: block;
+      margin: 0 auto;
+    }
+    #voltar {
+      margin-top: 12px;
+      width: 100%;
+      padding: 0.7em;
+      border: none;
+      border-radius: 6px;
+      background: #888;
+      color: #fff;
+      font-weight: normal;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: 0.2s background, transform 0.1s ease;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    #voltar:hover {
+      background: #555;
+    }
+    .linha-botoes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      margin-top: 12px;
+    }
+    @media (max-width: 520px) {
+      .container { width: 96vw; }
+      button, #voltar { font-size: 1em; }
+    }
+    button:active,
+    #voltar:active {
+      transform: scale(0.96);
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Planejamento de Aula</h2>
+    <form id="aulaForm" autocomplete="off">
+      <div class="linha-form">
+        <label for="turmas">Turmas</label>
+        <input type="text" id="turmas" name="turmas" placeholder="Ex: 9º C e 9º F" required>
+      </div>
+      <div class="linha-form">
+        <label for="tema">Tema</label>
+        <input type="text" id="tema" name="tema" placeholder="Digite o tema" required>
+      </div>
+      <div class="linha-form">
+        <label for="duracao">Duração</label>
+        <input type="text" id="duracao" name="duracao" placeholder="Ex: 45 minutos" required>
+      </div>
+      <div class="linha-form">
+        <label for="data">Data</label>
+        <input type="date" id="data" name="data" required>
+      </div>
+      <div class="linha-form">
+        <label for="orientacao">Orientações</label>
+        <textarea id="orientacao" name="orientacao" placeholder="Instruções ou preferências para a criação do código (exemplo: destacar avaliação, incluir recursos digitais, etc.)"></textarea>
+      </div>
+      <div class="linha-form">
+        <label for="foto-area">Foto</label>
+        <div id="foto-area" tabindex="0">Clique ou cole (Ctrl+V) uma imagem aqui</div>
+      </div>
+      <div class="linha-botoes">
+        <button id="salvar" type="submit">Salvar</button>
+        <button id="limpar" type="button">Limpar</button>
+        <button id="copiar" type="button">Copiar</button>
+      </div>
+      <button id="pesquisar" type="button">Pesquisar na Perplexity</button>
+    </form>
+    <button id="voltar" type="button" onclick="window.location.href='CAPA.html'">Voltar</button>
+  </div>
+  <script>
+    const campos = ["turmas", "tema", "duracao", "data", "orientacao"];
+    const form = document.getElementById("aulaForm");
+
+    // Restaura campos
+    campos.forEach(campo => {
+      document.getElementById(campo).value = localStorage.getItem(campo) || "";
+      document.getElementById(campo).addEventListener("input", function() {
+        localStorage.setItem(campo, this.value);
+      });
+    });
+
+    // Salva sem recarregar
+    form.onsubmit = function(e){
+      e.preventDefault();
+    };
+
+    // Limpa todos os dados
+    document.getElementById("limpar").addEventListener("click", () => {
+      campos.forEach(c => {
+        document.getElementById(c).value = "";
+        localStorage.removeItem(c);
+      });
+      document.getElementById("foto-area").innerHTML = "Clique ou cole (Ctrl+V) uma imagem aqui";
+      document.getElementById("foto-area").style.backgroundImage = "none";
+      localStorage.removeItem("fotoBase64");
+    });
+
+    // Foto por colagem direta
+    const fotoArea = document.getElementById("foto-area");
+
+    if (localStorage.getItem("fotoBase64")) {
+      mostrarFoto(localStorage.getItem("fotoBase64"));
+    }
+
+    fotoArea.addEventListener("paste", function(e){
+      const items = e.clipboardData.items;
+      for (let item of items) {
+        if (item.type.indexOf("image") !== -1) {
+          const blob = item.getAsFile();
+          const reader = new FileReader();
+          reader.onload = function(evt){
+            mostrarFoto(evt.target.result);
+            localStorage.setItem("fotoBase64", evt.target.result);
+          };
+          reader.readAsDataURL(blob);
+        }
+      }
+    });
+
+    function mostrarFoto(src){
+      fotoArea.innerHTML = `<img src="${src}" alt="Foto colada">`;
+      fotoArea.style.backgroundImage = "none";
+    }
+
+    fotoArea.addEventListener("click", function(){
+      fotoArea.focus();
+    });
+
+    // Copiar dados
+    document.getElementById("copiar").addEventListener("click", () => {
+      const conteudo = `Turmas: ${document.getElementById('turmas').value}
+Tema: ${document.getElementById('tema').value}
+Duração: ${document.getElementById('duracao').value}
+Data: ${document.getElementById('data').value}
+Orientações: ${document.getElementById('orientacao').value}`;
+      navigator.clipboard.writeText(conteudo).then(() => {
+        alert("Conteúdo copiado!");
+      });
+    });
+
+    // Botão PESQUISAR NA PERPLEXITY
+    document.getElementById("pesquisar").addEventListener("click", function() {
+      const turmas = document.getElementById('turmas').value;
+      const tema = document.getElementById('tema').value;
+      const duracao = document.getElementById('duracao').value;
+      const data = document.getElementById('data').value;
+      const orientacao = document.getElementById('orientacao').value;
+      const textoPrompt = `Crie um plano de aula detalhado para as turmas ${turmas} com o tema "${tema}", duração ${duracao}, para o dia ${data}.${orientacao ? " Instruções adicionais: "+orientacao : ""}`;
+      const url = "https://www.perplexity.ai/search?q=" + encodeURIComponent(textoPrompt);
+      window.open(url, "_blank");
+    });
+  </script>
+</body>
+</html>

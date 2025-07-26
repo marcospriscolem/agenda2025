@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>OBMEP 2025</title>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(135deg,#20b7ca 0%, #185a9d 90%);
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: #123b52;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 0 12px;
+    }
+    .container {
+      background: #fff;
+      border-radius: 24px;
+      box-shadow: 0 6px 32px #17597d27;
+      max-width: 420px;
+      width: 100%;
+      margin-top: 44px;
+      padding: 38px 24px 32px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    h1 {
+      color: #126687;
+      margin: 0 0 25px 0;
+      font-size: 2em;
+      font-weight: 700;
+      text-align: center;
+      letter-spacing: 1.2px;
+      text-shadow: 0px 3px 20px #20b7ca36;
+    }
+    .botao-pdf {
+      background: linear-gradient(90deg, #43cea2 0%, #185a9d 100%);
+      color: #fff;
+      font-size: 1.23em;
+      font-weight: 600;
+      border: none;
+      border-radius: 16px;
+      padding: 16px 40px;
+      margin: 22px 0 0 0;
+      box-shadow: 0 4px 20px #20a1c969;
+      cursor: pointer;
+      transition: background 0.22s, color 0.16s, box-shadow 0.20s, transform 0.14s;
+      letter-spacing: 1px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      outline: none;
+    }
+    .botao-pdf:hover {
+      background: linear-gradient(90deg, #185a9d 0%, #43cea2 100%);
+      color: #00f6ff;
+      box-shadow: 0 8px 28px #219ebca8;
+      transform: scale(1.05);
+    }
+    .voltar {
+      margin-top: 24px;
+      color: #1978ad;
+      text-decoration: none;
+      font-size: 1em;
+      font-weight: 600;
+      transition: color 0.18s;
+      display: inline-block;
+    }
+    .voltar:hover {
+      color: #154c70;
+      text-decoration: underline;
+    }
+    @media (max-width:550px) {
+      .container { padding: 18px 3vw 22px 3vw; }
+      h1 { font-size: 1.15em; }
+      .botao-pdf { font-size: 1em; padding: 10px 10vw; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>OBMEP 2025</h1>
+    
+    <a class="botao-pdf" href="obmepprisco.pdf" target="_blank" rel="noopener">
+      OBMEP PRISCO
+    </a>
+    
+    <a class="botao-pdf" href="Preparação obmep nível 01.pdf" target="_blank" rel="noopener">
+      OBMEP Nível 01
+    </a>
+    
+    <a class="botao-pdf" href="Preparação obmep nível 02.pdf" target="_blank" rel="noopener">
+      OBMEP Nível 02
+    </a>
+    
+    <a class="voltar" href="javascript:history.back()">← Voltar</a>
+  </div>
+</body>
+</html>

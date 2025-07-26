@@ -1,0 +1,22 @@
+npx create-expo-app StickerSmash --template blank
+
+cd StickerSmash
+
+npx expo start
+
+https://www.youtube.com/watch?v=nv58KC101og&list=PL0X3nNcTU-EfnDbDrrzGyEc4cBC32Poa_
+
+https://www.youtube.com/watch?v=M0MzT4IrDnY&list=PLTRU2u_bXJopA9Rm98Nt0K89gtVYD7Jom
+
+3E1FA1A688C21CF9
+https://www.youtube.com/watch?v=81XuamSODZw&list=PL-DOqRw1o4nGoBwWAS0_8pJ6UHf3gb0If
+
+https://www.youtube.com/watch?v=zKAAFsovtM4&list=PL_Q15fKxrBb5pckIW2RHwZbgf-FwRiCWr
+https://www.youtube.com/watch?v=stQeGAgTWNg&list=RDCLAK5uy_lDmr1GbXffAjKVdCYZxjFEiwzQNKGtNtk&index=2
+cabaré
+https://www.youtube.com/watch?v=KALhzKBlbSE&list=PLdUvcJfnBD_T3ZAxZ6MyYJvK32jqRmHzR&index=2
+
+https://www.youtube.com/watch?v=iPF7GhDLgrE&list=PLVKx2YozWU5i7jlp0_yg3CEE6BAwlxHaM
+
+
+https://www.youtube.com/watch?v=pfL_56BnPJk&list=PLjpLSA8di74cr4K2C64yX4uVuf9REXGE9&index=4
