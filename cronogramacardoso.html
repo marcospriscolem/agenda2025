@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <title>Cronograma II Trimestre 2025</title>
   <style>
-    /* Seu CSS original pode ficar aqui */
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: #f0f4f8;
@@ -77,7 +76,6 @@
       border-left-color: #0a4a82;
       background: #d2e4f8;
     }
-    /* Meses destacados */
     tbody tr.month-row td {
       background: #0a4a82;
       color: #fff;
@@ -127,7 +125,6 @@
       table { width: 100%; font-size: 0.95em;}
       .obs { font-size: 1em; }
     }
-    /* Estilo da tela de login */
     #login-container {
       display: flex;
       flex-direction: column;
@@ -164,20 +161,15 @@
   </style>
 </head>
 <body>
-
-  <!-- Tela de Login -->
   <div id="login-container">
     <h1>Insira a senha para acessar</h1>
     <input type="password" id="password" placeholder="Senha" />
     <button id="login-btn">Entrar</button>
     <div id="error"></div>
   </div>
-
-  <!-- Conteúdo da página, oculto inicialmente -->
   <div id="conteudo" style="display:none;">
 
-    <!-- Aqui cole todo seu conteúdo HTML original, desde o botão Voltar até o final -->
-
+    <!-- SEU CONTEÚDO AQUI -->
     <button class="voltar-btn" onclick="window.history.back();">&#8592; Voltar</button>
     <h1>Cronograma II Trimestre 2025</h1>
     <table>
@@ -195,8 +187,7 @@
               <td class="date">26/05</td>
               <td class="event">Início do Trimestre</td>
           </tr>
-          <!-- Resto do cronograma original aqui... -->
-          <!-- Não esqueça de adicionar todo o restante do conteúdo!!! -->
+          <!-- Adicione os demais eventos do cronograma aqui, conforme seu exemplo... -->
           <tr class="month-row"><td colspan="3">SETEMBRO</td></tr>
           <tr>
               <td class="data-check"><input type="checkbox" class="check-data" data-id="d24" /></td>
@@ -233,9 +224,8 @@
     <div class="obs">
       XXVII FESTA DO FOLCLORE – TRADIÇÕES QUE ACOLHEM, CULTURAS QUE ENCANTAM.
     </div>
-
+    <!-- fim -->
   </div>
-
   <script>
     async function hashSenha(senha) {
       const encoder = new TextEncoder();
@@ -245,11 +235,10 @@
       return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
     }
 
-    const senhaHashCorreta = "8192d813d45faaa05b482bfc444deaa17a505037762ccac2cf4e5c37e7be70cf"; 
-    // hash SHA-256 da senha "769117"
+    const senhaHashCorreta = "8192d813d45faaa05b482bfc444deaa17a505037762ccac2cf4e5c37e7be70cf"; // SHA-256 da senha 769117
 
     document.getElementById('login-btn').addEventListener('click', async () => {
-      const senha = document.getElementById('password').value;
+      const senha = document.getElementById('password').value.trim(); // .trim() remove espaços
       const senhaHash = await hashSenha(senha);
       if (senhaHash === senhaHashCorreta) {
         document.getElementById('login-container').style.display = 'none';
@@ -259,11 +248,21 @@
       }
     });
 
-    // Opcional: permitir que o usuário pressione Enter para enviar
     document.getElementById('password').addEventListener('keypress', e => {
       if (e.key === 'Enter') {
         document.getElementById('login-btn').click();
       }
+    });
+
+    // Script para manter status dos checkboxes
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('.check-data').forEach((box) => {
+        const checked = localStorage.getItem(box.dataset.id);
+        if (checked === 'true') box.checked = true;
+        box.addEventListener('change', function() {
+          localStorage.setItem(box.dataset.id, box.checked);
+        });
+      });
     });
   </script>
 </body>
