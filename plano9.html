@@ -45,11 +45,27 @@
       padding: 24px 32px 24px 32px;
       border-radius: 18px;
       box-shadow: 0 3px 18px #b0bbe634;
-      background: linear-gradient(120deg, #fafdff 80%, #e6fcf2 100%);
       border: 2.2px solid #bfe1d6;
     }
     .plano + .plano {
-      margin-top: 5px; /* Reduzido pela metade */
+      margin-top: 5px; /* Espaço reduzido */
+    }
+    /* Cores diferentes para cada plano */
+    .plano01 {
+      background: linear-gradient(120deg, #fdfbfc 85%, #e1edff 100%);
+      border-color: #bacee8;
+    }
+    .plano02 {
+      background: linear-gradient(120deg, #f9fff9 85%, #d6f7ef 100%);
+      border-color: #bfe1d6;
+    }
+    .plano03 {
+      background: linear-gradient(120deg, #fdf9fa 85%, #f4e5ec 100%);
+      border-color: #f1adc8;
+    }
+    .plano04 {
+      background: linear-gradient(120deg, #fcfff7 85%, #fff7ce 100%);
+      border-color: #eadcaa;
     }
     h1, h2, h3 {
       text-align: center;
@@ -98,7 +114,6 @@
       color: #008995;
       font-weight: 600;
     }
-    /* Responsivo */
     @media (max-width: 900px) {
       .plano {
          max-width: 97vw;
@@ -112,10 +127,10 @@
 </head>
 <body>
   <h1>ESCOLA MUNICIPAL JOSÉ CARDOSO DE LIMA</h1>
-  <a href="index.html" class="voltar-botao">&#8592; Voltar para a Capa</a>
+  <a href="index.html" class="voltar-botao">&#8592; Voltar</a>
 
   <!-- Plano de Aula 15 de julho -->
-  <div class="plano">
+  <div class="plano plano01">
     <div class="info-box">
       Professor: Marcos Antonio de Jesus<br>
       Turmas: 9º C e F
@@ -138,7 +153,7 @@
   </div>
 
   <!-- Plano de Aula 18 de julho -->
-  <div class="plano">
+  <div class="plano plano02">
     <div class="info-box">
       Professor: Marcos Antonio de Jesus<br>
       Turmas: 9º C e F
@@ -160,7 +175,7 @@
   </div>
 
   <!-- Plano de Aula 22 de julho -->
-  <div class="plano">
+  <div class="plano plano03">
     <div class="info-box">
       Professor: Marcos Antonio de Jesus<br>
       Turmas: 9º C e F
@@ -184,7 +199,7 @@
   </div>
 
   <!-- Plano de Aula 25 de julho -->
-  <div class="plano">
+  <div class="plano plano04">
     <div class="info-box">
       Professor: Marcos Antonio de Jesus<br>
       Turmas: 9º C e F
