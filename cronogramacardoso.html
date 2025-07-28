@@ -89,7 +89,7 @@
         }
         td.date {
             white-space: nowrap;
-            width: 140px;
+            width: 180px;
             color: #0a4a82;
             font-weight: 600;
         }
@@ -120,6 +120,14 @@
         td.data-check {
             width: 36px;
             text-align: center;
+        }
+        /* Fundo escuro para datas expiradas */
+        tr.expirada td {
+            background: #242424 !important;
+            color: #fff !important;
+        }
+        tr.expirada td.date {
+            color: #ffa726 !important;
         }
         @media (max-width:600px) {
             .voltar-btn { left: 10px; top: 10px; padding: 7px 14px; font-size: 0.95em;}
@@ -304,6 +312,68 @@
           localStorage.setItem(box.dataset.id, box.checked);
         });
       });
+
+      // --------- DIA DA SEMANA ---------
+      function getWeekdayName(dateStr) {
+        const dias = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
+        // Para faixas, pega o 1º dia
+        let target = dateStr.split('a')[0].trim();
+        let [day, month] = target.split('/');
+        // Ano padrão (altere se usar para outro ano):
+        let year = 2025;
+        // Se o mês for setembro, pode ser que ultrapasse, caso datas dos trimestres cruzem o ano
+        if (parseInt(month,10) < 5) year++;
+        const d = new Date(year, parseInt(month,10)-1, parseInt(day,10));
+        return dias[d.getDay()];
+      }
+
+      // Acrescenta dia da semana em todas as datas
+      document.querySelectorAll('td.date').forEach(function(cell) {
+        const original = cell.textContent.trim();
+        if (!original.match(/\(\w+\)$/)) {  // Evita duplicar dia da semana
+          let dataParaCalculo = original.replace(/ \(.*$/, '');
+          if (!dataParaCalculo) return;
+          if (!dataParaCalculo.includes('a'))
+            cell.textContent = `${original} (${getWeekdayName(dataParaCalculo)})`;
+          else {
+            const ini = dataParaCalculo.split('a')[0].trim();
+            cell.textContent = `${original} (${getWeekdayName(ini)})`;
+          }
+        }
+      });
+
+      // -------- FIM DO DIA DA SEMANA --------------
+
+      // --------- FUNDO ESCURO PARA DATAS EXPIRADAS ----------
+      function parseDatePtBR(dateStr) {
+        // Função para datas simples e faixas "20/06 a 04/07"
+        let target = dateStr;
+        if (dateStr.includes('a'))
+          target = dateStr.split('a')[1].trim(); // usa o término
+        let [day, month] = target.split('/');
+        // Ano padrão (altere se usar para outro ano!):
+        let year = 2025;
+        if (parseInt(month,10) < 5) year++;
+        return new Date(year, parseInt(month,10)-1, parseInt(day,10));
+      }
+      // ATENÇÃO: para fins de demonstração, o "hoje" está fixo. Coloque "new Date()" para produção!
+      const today = new Date(); // new Date(2025, 6, 28); // Julho é 6! (para teste com data fixa)
+      document.querySelectorAll('tbody tr').forEach((row) => {
+        const dateCell = row.querySelector('.date');
+        if (!dateCell) return;
+        let text = dateCell.textContent.trim().replace(/\s?\(.*\)$/,''); // Remove o dia da semana
+        // Lida com períodos como "20/06 a 04/07"
+        let dataRef = text;
+        if (text.includes('a')) {
+          const end = text.split('a')[1].trim();
+          dataRef = end; // Pega a data final para marcar como expirada
+        }
+        // Verifica se já passou
+        if (parseDatePtBR(dataRef).setHours(23,59,59,999) < today.getTime()) {
+          row.classList.add('expirada');
+        }
+      });
+      // --------- FIM FUNDO ESCURO DATAS EXPIRADAS ----------
     </script>
 </body>
 </html>
