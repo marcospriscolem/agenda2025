@@ -131,6 +131,12 @@
             color: #d32f2f !important;
             text-decoration: line-through !important;
         }
+        .ok-symbol {
+            margin-left: 4px;
+            font-size: 1em;
+            color: #14b714;
+            vertical-align: middle;
+        }
         @media (max-width:600px) {
             .voltar-btn { left: 10px; top: 10px; padding: 7px 14px; font-size: 0.95em;}
             table { width: 100%; font-size: 0.95em;}
@@ -306,7 +312,7 @@
         XXVII FESTA DO FOLCLORE – TRADIÇÕES QUE ACOLHEM, CULTURAS QUE ENCANTAM.
     </div>
     <script>
-      // Salvar e restaurar status das caixas de seleção
+      // Salvar e restaurar status das caixas de seleção (checkbox)
       document.querySelectorAll('.check-data').forEach((box) => {
         const checked = localStorage.getItem(box.dataset.id);
         if (checked === 'true') box.checked = true;
@@ -315,23 +321,20 @@
         });
       });
 
-      // --------- DIA DA SEMANA ---------
+      // Adiciona o dia da semana ao lado da data
       function getWeekdayName(dateStr) {
         const dias = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
         // Para faixas, pega o 1º dia
         let target = dateStr.split('a')[0].trim();
         let [day, month] = target.split('/');
-        // Ano padrão
         let year = 2025;
         if (parseInt(month,10) < 5) year++;
         const d = new Date(year, parseInt(month,10)-1, parseInt(day,10));
         return dias[d.getDay()];
       }
-
-      // Acrescenta dia da semana em todas as datas
       document.querySelectorAll('td.date').forEach(function(cell) {
         const original = cell.textContent.trim();
-        if (!original.match(/\(\w+\)$/)) {  // Evita duplicar dia da semana
+        if (!original.match(/\(\w+\)$/)) {
           let dataParaCalculo = original.replace(/ \(.*$/, '');
           if (!dataParaCalculo) return;
           if (!dataParaCalculo.includes('a'))
@@ -343,23 +346,21 @@
         }
       });
 
-      // --------- FUNDO SUAVE E TEXTO RISCADO PARA DATAS EXPIRADAS ----------
+      // Marca datas expiradas (expirada) com fundo verde claro e texto vermelho riscado
       function parseDatePtBR(dateStr) {
-        // Função para datas simples e faixas "20/06 a 04/07"
         let target = dateStr;
         if (dateStr.includes('a'))
-          target = dateStr.split('a')[1].trim(); // usa o término
+          target = dateStr.split('a')[1].trim();
         let [day, month] = target.split('/');
         let year = 2025;
         if (parseInt(month,10) < 5) year++;
         return new Date(year, parseInt(month,10)-1, parseInt(day,10));
       }
-      // Data de referência é o dia atual:
       const today = new Date();
       document.querySelectorAll('tbody tr').forEach((row) => {
         const dateCell = row.querySelector('.date');
         if (!dateCell) return;
-        let text = dateCell.textContent.trim().replace(/\s?\(.*\)$/,''); // Remove o dia da semana
+        let text = dateCell.textContent.trim().replace(/\s?\(.*\)$/,'');
         let dataRef = text;
         if (text.includes('a')) {
           const end = text.split('a')[1].trim();
@@ -369,7 +370,22 @@
           row.classList.add('expirada');
         }
       });
-      // -------------------------------------------------------
+
+      // Marca automaticamente o quadrinho e coloca símbolo "ok" para tarefas realizadas (expiradas)
+      document.querySelectorAll('tr.expirada').forEach(function(row) {
+        let checkbox = row.querySelector('input.check-data');
+        if(checkbox && !checkbox.checked) {
+          checkbox.checked = true;
+          localStorage.setItem(checkbox.dataset.id, true);
+        }
+        // Adiciona símbolo ok apenas se ainda não estiver lá
+        if (checkbox && (!checkbox.nextElementSibling || checkbox.nextElementSibling.className !== 'ok-symbol')) {
+          let span = document.createElement('span');
+          span.className = 'ok-symbol';
+          span.textContent = '✔️';
+          checkbox.parentNode.appendChild(span);
+        }
+      });
     </script>
 </body>
 </html>
